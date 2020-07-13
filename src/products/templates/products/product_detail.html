@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Product Item</h1>
+
+<h3> In app template : {{object.title}} </h3>
+<p>
+
+    <!-- Old method : where context is hard coded in the view
+    {% if description != None and description != '' %}
+      {{description}}
+    {% else %}
+      Description coming soon
+    {% endif %} -->
+
+    {% if object.description != None and object.description != '' %}
+      {{object.description}}
+    {% else %}
+      Description coming soon
+    {% endif %}
+
+  </p>
+
+  {{object.price}}
+
+{% endblock %}
