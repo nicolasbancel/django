@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Contact Page</h1>
+<h3> {{my_title|center:"15"|upper}}</h3>
+<p>This is a template</p>
+
+{{my_hmtl|safe}}
+{{my_hmtl|striptags}}
+
+<p>
+<!-- {{ my_text }}, {{my_number}} -->
+{{ my_title|capfirst}}, {{my_number}}
+{{my_address}}
+</p>
+
+<ul>
+  <li> Item 1 </li>
+  <li> Item 2 </li>
+</ul>
+
+<ul>
+{% for my_sub_item in my_list %}
+
+  {% if my_sub_item == 312 %}
+      <li> {{forloop.counter}} - {{my_sub_item | add:22}} </li>
+  {% else %}
+      <li> {{forloop.counter}} - {{my_sub_item}} </li>
+  {% endif %}
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+<!--If not writing the block content thing : will actually just load base.html-->
+
+<!-- <h1>Contact Page</h1>
+<p>This is a template</p> -->
